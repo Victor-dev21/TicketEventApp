@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  location_id: 1
+  admin_id: 1
+  date: 2024-02-14
+  category_id: 1
+  ticket_quantity: 1
+  venue_id: 1
+  ticket_availability: 1
+  status: 
+
+two:
+  name: MyString
+  location_id: 1
+  admin_id: 1
+  date: 2024-02-14
+  category_id: 1
+  ticket_quantity: 1
+  venue_id: 1
+  ticket_availability: 1
+  status: 

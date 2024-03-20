@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import { useEffect,useState } from 'react';
 import { Navigate,useHistory} from 'react-router-dom';
 
-function LoginComponent({setCurrentUser,setLoggedIn}){
+function LoginComponent({setCurrentUser,setLoggedIn,loggedIn}){
     const[username,setUsername] = useState("")
     const[password,setPassword] = useState("");
     const [error,setError] = useState(false);
     const [success,setSuccess] = useState(false);
+    
     function handleSubmit(e){
         e.preventDefault();
         const user = {username,password};
@@ -23,10 +24,15 @@ function LoginComponent({setCurrentUser,setLoggedIn}){
         .then(response => response.json())
         .then(data=> {
             if(data.message == "Success"){
-                localStorage.token = data.user_id
+                
                 setCurrentUser(data.user)
                 setSuccess(true);
                 setLoggedIn(true);
+                const userNamespace = 'user_';
+                localStorage.setItem(userNamespace+"id",data.user_id);
+                localStorage.setItem(userNamespace+"username",data.username);
+                localStorage.setItem("role",data.role);
+                localStorage.token = data.user_id
                 
             }else if(data.message == "Error"){
                 setError(true);
@@ -48,7 +54,10 @@ function LoginComponent({setCurrentUser,setLoggedIn}){
                 </label>
                 <button type="submit">Log In</button>
             </form>
-            {success?<Navigate to="/home"/>:null}
+            {success?<Navigate to="/user/home"/>:null}
+            {loggedIn?<Navigate to="/user/home"/>:null}
+            
+            <br/>
             Or Create an account 
             <a href="http://localhost:3001/register">
             <button>Register</button>

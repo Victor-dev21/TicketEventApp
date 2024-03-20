@@ -3,9 +3,8 @@ import { useEffect,useState } from 'react';
 import TestComponent from './testComponent'
 import { Navigate,useHistory} from 'react-router-dom';
 
-const USER_SIGN_IN = "http://localhost:3000/users"
 
-function RegisterComponent(){ 
+function RegisterComponent({loggedIn}){ 
     const [username,setUsername] = useState("");
     const[password,setPassword] = useState("");
     const [created, setCreated] = useState(false);
@@ -59,7 +58,8 @@ function RegisterComponent(){
                     <button type="submit">Create</button>
 
                 </form>
-                {created?<Navigate to="/login"/>:null}
+                {created?<Navigate to="/user/login"/>:null}
+            
             </div>
         )
 }

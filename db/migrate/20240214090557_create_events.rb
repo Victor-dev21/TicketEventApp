@@ -9,7 +9,7 @@ class CreateEvents < ActiveRecord::Migration[6.1]
       t.integer :ticket_quantity
       t.integer :venue_id
       t.integer :ticket_availability
-      t.string--no-test-framework :status
+      t.string :status
 
       t.timestamps
     end

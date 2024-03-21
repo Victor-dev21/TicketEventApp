@@ -11,7 +11,8 @@ function NavBar({logout}) {
             <Navbar.Brand href="/admin/dashboard">Logo</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/admin/dashboard">Dashboard</Nav.Link>
-              <Nav.Link href="/admin/event/new">new Event</Nav.Link>
+              <Nav.Link href="/admin/event/new">New Event</Nav.Link>
+              <Nav.Link href="/admin/events">My Events</Nav.Link>
               <Button className="btn-secondary" size="btn-sm" onClick={logout}>Logout</Button>
             </Nav>
           </Container>

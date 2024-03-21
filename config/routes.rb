@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   post 'admin/register', to: "admins#register"
   post 'admin/login', to: "admins#login"
 
+  get 'v1/locations', to: "locations#index"
+  get 'v1/venues', to: "venues#index"
+  get 'v1/categories', to: "categories#index"
+  post '/admin/event', to: "events#create"
 
+  post '/admin/events', to: "events#index"
 end

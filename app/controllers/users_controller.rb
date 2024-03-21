@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def register
 
     @user = User.new(user_params)
-    binding.pry
+    #binding.pry
     if @user.valid?
       @user.save
       render json:{message:"Success"}

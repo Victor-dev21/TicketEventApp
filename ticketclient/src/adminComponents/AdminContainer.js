@@ -8,6 +8,7 @@ import AdminDashboard from "./AdminDashboard";
 import AdminLoginComponent from "./AdminLoginComponent";
 import NavBar from "./NavBar";
 import EventContainer from "./EventContainer";
+import AdminEvents from "./AdminEvent";
 function AdminContainer(){
     const [admin, setAdmin] = useState(null);
     const [loggedIn, setLoggedIn] = useState(false);
@@ -41,6 +42,7 @@ function AdminContainer(){
                 <Route element={<PrivateRoutes />}>
                   <Route element={<NavBar logout={logout}/>}>
                       <Route element={<AdminDashboard/>} path="/admin/dashboard" exact/>
+                      <Route element={<AdminEvents/>} path="/admin/events" exact/>
                       <Route element={<EventContainer/>} path="/admin/event/new" exact/>
                   </Route>
                 </Route>

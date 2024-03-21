@@ -7,12 +7,10 @@ function AdminLoginComponent({setLoggedIn,loggedIn}){
     const [username,setUsername] = useState("");
     const[password,setPassword] = useState("");
     const navigate = useNavigate();
-    console.log("Inside the log in component")
-    console.log(loggedIn)
+    
     
     function handleSubmit(event){
         event.preventDefault();
-        console.log("Inside the handle submit ")
         const admin = {username,password};
         
          fetch("http://localhost:3000/admin/login",{
